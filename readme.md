@@ -30,6 +30,19 @@
 
 Instalation
 ```
+# install redis and start
+# https://redis.io/topics/quickstart
+
+# clone repository
+git clone https://github.com/Adviser-ua/documenter.git
+
+# create virtual environment 
+virtualenv venv --python=python3.8
+
+# activate venv
+source venv/bin/activate
+
+# install requirements
 pip install requiremtns.txt
 
 flask db init
@@ -53,7 +66,12 @@ change parameters in config.py if needed
 
 Runing
 ````
-python app.py
+# start developer server
+flask run
+
+# in anouther terminal 
 sh start_worker.sh
+
+# in anouther terminal
 sh start_beat.sh
 ```
