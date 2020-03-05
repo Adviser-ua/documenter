@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <div>
+        <label>task:</label>
+        <label>{{ task.id }}</label>
+    </div>
+    <div>
+        <label>name</label>
+        <label>{{ task.name }}</label>
+    </div>
+    <div>
+        <label>state</label>
+        <label>{{ task.state }}</label>
+    </div>
+    <div>
+        <label>type</label>
+        <label>{{ task.type }}</label>
+    </div>
+    <div>
+        <label>expires</label>
+        <label>{{ task.expires }}</label>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,4 @@
+app.sqlite
+celerybeat.pid
+celerybeat-schedule
+/venv/

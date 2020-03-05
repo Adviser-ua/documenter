@@ -1,0 +1,26 @@
+{% extends "index.html" %}
+
+{% block content %}
+    {% if documents %}
+        <table class="table">
+            <tr>
+                <th>document name</th>
+                <th>instant send</th>
+                <th>periodic send</th>
+            </tr>
+            {% if documents %}
+                {% for document in documents %}
+                    <tr>
+                        <td><p class="form-group">{{ document.filename }}</p></td>
+                        <td><a class="form-group" href="{{ url_for("email_sender.instant_send", document_id=document.id) }}">send</a></td>
+                        <td><a class="form-group" href="{{ url_for("email_sender.send_periodic", document_id=document.id) }}">send</a></td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <p>there are no any tasks</p>
+            {% endif %}
+        </table>
+    {% else %}
+        <p>there are no any documents</p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+    create document
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>{{ form.document_type.label }}<br>{{ form.document_type }}<br></p>
+        <p>{{ form.document_name.label }}<br>{{ form.document_name(size=32) }}<br>{% for error in form.document_name.errors %}<span style="color: red;">[{{ error }}]</span>{% endfor %}</p>
+        <p>{{ form.document_text.label }}<br>{{ form.document_text(size=32) }}<br>{% for error in form.document_text.errors %}<span style="color: red;">[{{ error }}]</span>{% endfor %}</p>
+        <p>{{ form.submit }}<br></p>
+    </form>
+
+{% endblock %}

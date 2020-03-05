@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <div class="tab-content">
+        <div id="instant" class="tab-pane fade in active">
+            <h2>Send Asynchronous Email document "{{ document.filename }}"</h2>
+            {% for message in get_flashed_messages() %}<p style="color: red;">{{ message }}</p>{% endfor %}
+            <form method="POST">
+                {{ form.hidden_tag() }}
+                <p>{{ form.receiver.label }}<br>{{ form.receiver(size=32) }}<br>{% for error in form.receiver.errors %}<span style="color: red;">[{{ error }}]</span>{% endfor %}</p>
+                <p>{{ form.submit }}</p>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "index.html" %}
+
+{% block content %}
+    {% if result %}
+        <table class="table">
+            <tr>
+                <th>id</th>
+                <th>filename</th>
+                <th>task_id</th>
+                <th>sent</th>
+                <th>day sent</th>
+                <th>details</th>
+                <th>info</th>
+            </tr>
+            {% for task, doc in result %}
+                <tr>
+                    <td><p class="form-group">{{ task.id }} </p></td>
+                    <td><p class="form-group">{{ doc.filename }} </p></td>
+                    <td><p class="form-group">{{ task.task_id }} </p></td>
+                    <td><p class="form-group">{{ task.sent }} </p></td>
+                    <td><p class="form-group">{{ task.day_send }} </p></td>
+                    <td><p class="form-group">{{ task.detail }} </p></td>
+                    <td><a class="form-group" href="{{ url_for("task_status.task_status", task_id=task.task_id) }}">info</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>there are no any tasks</p>
+    {% endif %}
+{% endblock %}

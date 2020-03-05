@@ -1,0 +1,14 @@
+<header class="header">
+    Documenter:
+    <a href="{{ url_for('documents.index') }}">Home</a>
+    <a href="{{ url_for('create.create_document') }}">Create</a>
+    <a href="{{ url_for('loader.upload_file') }}">Upload</a>
+    <a href="{{ url_for('task_status.tasks') }}">Status</a>
+    {% if current_user.is_anonymous %}
+        <a href="{{ url_for('auth.login') }}">Login</a>
+        <a href="{{ url_for('auth.register') }}">Register</a>
+    {% else %}
+        {{ current_user.username }}
+        <a href="{{ url_for('auth.logout') }}">Logout</a>
+    {% endif %}
+</header>
