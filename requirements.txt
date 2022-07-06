@@ -19,7 +19,7 @@ itsdangerous==1.1.0
 Jinja2==2.11.1
 kombu==4.6.8
 loginform==1.2.0
-lxml==4.5.0
+lxml==4.9.1
 Mako==1.1.2
 MarkupSafe==1.1.1
 pdfkit==0.6.1
